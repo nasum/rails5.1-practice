@@ -1,0 +1,13 @@
+storage:
+  image: busybox
+  volumes:
+      - /var/lib/postgresql/data
+rails_practice_db:
+  image: postgres:9.6.1
+  environment:
+    POSTGRES_USER: rails5practice
+    POSTGRES_PASSWORD: rails5practice
+  ports:
+    - "5432:5432"
+  volumes_from:
+      - storage
